@@ -29,7 +29,15 @@ The app uses the Next.js App Router and Webpack. The original stylesheet and sys
 2. In Vercel, import that repository and choose the **Next.js** framework preset.
 3. Keep the project root as the root directory. Use `npm ci` to install and `npm run build` to build, then deploy.
 
-No environment variables, database, or API keys are required. Other hosting services that support Next.js can run the production commands above.
+## Supabase registration
+
+1. Open Supabase SQL Editor and run [supabase-setup.sql](supabase-setup.sql). It creates the location tables and private registration table, then loads 14 regions, 209 districts or cities, and 11,308 distinct school entries.
+2. Set `SUPABASE_URL` and `SUPABASE_SECRET_KEY` in Vercel project environment variables, then redeploy. Use a modern `sb_secret_...` key. These variables are server only; never use a `NEXT_PUBLIC_` prefix for the secret key. See `.env.example` for the names.
+3. A student completes the five labs, six scenarios, and the 20 question test. A score of at least 16/20 unlocks registration. The form saves region, district, school, class, first name, surname, and score.
+
+The school directory comes from the [community maintained schools_list dataset](https://github.com/Asadbek525/schools_list). Verify its coverage and spelling against your school roster before launch. The SQL and browser selector data were generated from the same source. Supabase has no public read policy for registration records; staff can view them in the Supabase dashboard.
+
+The server recalculates the score from submitted answers. Since this is an anonymous web test whose questions and answers are present in the browser, the result is suitable for registration and educational monitoring, not a tamper-proof exam. Names and school choices are self-reported.
 
 ## Preserved behavior
 
@@ -39,7 +47,7 @@ No environment variables, database, or API keys are required. Other hosting serv
 - Local progress storage, sidebar collapse, and mobile navigation
 - Voice simulation, printing, reset controls, and source links
 
-Progress stays in each visitor's browser through `localStorage`, using the original storage key. It is not shared between devices or visitors. The original offline-edition wording is preserved.
+Learning progress stays in each visitor's browser through `localStorage`, using the original storage key. Registration details and score are sent to Supabase only when the student submits the form. Progress is not shared between devices or visitors.
 
 ## Files
 

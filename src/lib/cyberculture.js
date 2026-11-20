@@ -24,7 +24,7 @@ question:B('QUESTION','SAVOL'),of:B('OF','/'),answered:B('answered','javob beril
 resultsTitle:B('YOUR JUDGMENT SNAPSHOT','QAROR QABUL QILISH NATIJASI'),resultSubtitle:B('A starting point for better habits—not a certificate of immunity to future scams.','Yaxshi odatlar uchun boshlang‘ich nuqta — kelajakdagi tahdidlardan mutlaq himoya kafolati emas.'),score:B('CORRECT ANSWERS','TO‘G‘RI JAVOBLAR'),review:B('Review your reasoning','Javoblaringizni tahlil qiling'),resultAction:B('Return to the field guide','Amaliy qo‘llanmaga qaytish'),retake:B('Retake the assessment','Sinovni qayta ishlash'),print:B('Print this summary','Natijani chop etish'),
 guideTitle:B('A field guide for a changing internet','O‘zgarayotgan internet uchun amaliy qo‘llanma'),guideDesc:B('The tools will change. These habits should travel with you.','Vositalar o‘zgaradi. Bu odatlar esa siz bilan qolishi kerak.'),guideNote:B('For students: if a situation involves money, threats, private images or account access, involve a trusted adult early. No one deserves blame for being deceived.','O‘quvchilar uchun: vaziyat pul, tahdid, shaxsiy tasvir yoki hisobga kirish bilan bog‘liq bo‘lsa, ishonchli kattadan tezroq yordam so‘rang. Aldangan odamni ayblash to‘g‘ri emas.'),
 sourcesTitle:B('The evidence behind the experience','Tajriba asosidagi manbalar'),sourcesDesc:B('Designed using public safety guidance and research on learning, manipulation and verification. This is an educational simulation, not a security scanner or professional certification.','Ochiq xavfsizlik yo‘riqnomalari, manipulyatsiya va ta’lim bo‘yicha tadqiqotlarga tayangan. Bu xavfsizlik skaneri ham, rasmiy sertifikat ham emas.'),
-privacy:B('Private by design: when browser storage is available, progress and quiz answers stay on this device. No account, analytics or automatic network requests.','Maxfiylik: brauzer saqlashga ruxsat bersa, natijalar shu qurilmada saqlanadi. Hisob, tahliliy kuzatuv yoki avtomatik tarmoq so‘rovi yo‘q.'),
+privacy:B('Learning progress stays in this browser. Registration details and score are sent only when you submit the form. No analytics.','O‘quv jarayoni shu brauzerda qoladi. Ro‘yxat formasini yuborsangiz, ma’lumotlaringiz va ballingiz saqlanadi. Tahliliy kuzatuv yo‘q.'),
 restart:B('Reset local progress','Mahalliy natijalarni tozalash'),resetConfirm:B('Reset labs, missions and test answers stored in this browser?','Brauzerda saqlangan laboratoriya, vaziyat va test natijalari o‘chirilsinmi?'),
 noFear:B('We do not teach fear. We teach a response.','Biz qo‘rquvni emas, to‘g‘ri harakatni o‘rgatamiz.'),
 notWeak:B('Your emotions are not a weakness. They are human. Manipulation works by pushing normal reactions into rushed decisions.','Hissiyotlaringiz zaiflik emas. Bu tabiiy holat. Manipulyatsiya oddiy his-tuyg‘ular orqali shoshma-shosharlikka undaydi.'),
@@ -96,8 +96,12 @@ const SOURCES=[
  {name:'Government of Uzbekistan — Telegram and suspicious app warning',desc:B('Local examples involving unfamiliar APK files and messaging-platform scams.','Notanish APK-fayllar va messenjer firibgarligi haqida mahalliy ogohlantirish.'),url:'https://gov.uz/en/bekobod/news/view/233523'}
 ];
 const STORAGE='second-thought-offline-v1';
-const initial=()=>({lang:'uz',langUserSelected:false,collapsed:false,labs:{},labAnswers:{},labChecks:{},missionAnswers:{},missionIndex:0,quizAnswers:{},quizIndex:0,submitted:false,homeAnswer:''});
+const initial=()=>({lang:'uz',langUserSelected:false,collapsed:false,labs:{},labAnswers:{},labChecks:{},missionAnswers:{},missionIndex:0,quizAnswers:{},quizIndex:0,submitted:false,homeAnswer:'',choiceOrders:null,registered:false});
 let state=initial();try{const value=JSON.parse(localStorage.getItem(STORAGE));if(value&&typeof value==='object'){state={...state,...value};if(!state.langUserSelected)state.lang='uz';}}catch{}
+function newChoiceOrders(){return EXAM.map(q=>{const order=q.o.map((_,i)=>i);for(let i=order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]];}return order;});}
+if(!Array.isArray(state.choiceOrders)||state.choiceOrders.length!==EXAM.length){state.choiceOrders=newChoiceOrders();try{localStorage.setItem(STORAGE,JSON.stringify(state));}catch{}}
+let directoryPromise;
+function loadDirectory(){return directoryPromise??=fetch('/uzbekistan-schools.json').then(r=>{if(!r.ok)throw new Error('Directory unavailable');return r.json();});}
 let view='home';
 const S=document.getElementById('screen'),rail=document.getElementById('rail');
 const l=x=>x&&typeof x==='object'&&Object.hasOwn(x,'en')?(x[state.lang]||x.en):String(x??'');
@@ -111,7 +115,7 @@ const canTest=()=>doneLabs()===5&&doneMissions()===6;
 const overall=()=>Math.round((doneLabs()+doneMissions()+(state.submitted?20:doneTest()))/31*100);
 const pick=(lab)=>state.labAnswers[lab]===undefined?null:Number(state.labAnswers[lab]);
 function save(){try{localStorage.setItem(STORAGE,JSON.stringify(state));}catch{}}
-function navigate(v){view=v;if(v==='test'&&!canTest()&&!state.submitted){view='locked';}render();window.scrollTo({top:0,behavior:'instant'});rail.classList.remove('mobileopen');document.getElementById('overlay').classList.remove('show');}
+function navigate(v){view=v;if(v==='test'&&!canTest()&&!state.submitted){view='locked';}if(v==='registration'&&(!state.submitted||resultStats().total<16)){view='results';}render();window.scrollTo({top:0,behavior:'instant'});rail.classList.remove('mobileopen');document.getElementById('overlay').classList.remove('show');}
 const foot=()=>`<footer class="footer"><span>${e(t('footer'))} · 2026</span><span>${e(t('privacy'))}</span></footer>`;
 const kicker=(s)=>`<div class="section-kicker">${e(s)}</div>`;
 function navrender(){
@@ -174,6 +178,7 @@ function home(){
    <h1 id="homeMainTitle">${uz?'Internetda <em>o‘ylab</em> harakat qiling.':'Think <em>before</em> you act online.'}</h1>
    <p class="welcome-description">${tr('Learn how emotions influence decisions, how to verify suspicious requests, and how to protect yourself online. Practice it instead of just watching slides.','Hissiyotlar qarorimizga qanday ta’sir qilishini, shubhali xabarlarni tekshirishni va internetda o‘zingizni himoya qilishni o‘rganing. Bu yerda faqat o‘qimaysiz — o‘zingiz sinab ko‘rasiz.')}</p>
    <div class="hero-action"><button class="primary hero-primary" data-action="navigate" data-value="${nextView}">${e(t(mainButton))}<span aria-hidden="true">→</span></button><span class="hero-aside">${tr('5 lessons · 6 scenarios · 20 questions','5 dars · 6 vaziyat · 20 savol')}</span></div>
+   <p class="registration-note">${tr('Complete the lessons, scenarios and final test. Score at least 16/20 to register your school details.','Darslar, vaziyatlar va yakuniy sinovni tugating. Maktab ma’lumotlari bilan ro‘yxatdan o‘tish uchun kamida 16/20 ball oling.')}</p>
    <div class="reassurance"><span class="checkmark">✓</span>${tr('No coding, no real threats, no need to be an expert.','Dasturlash shart emas. Haqiqiy tahdidlar yo‘q. Boshlash uchun bilim talab etilmaydi.')}</div>
   </div>
   <div class="demo-card" aria-label="${tr('Interactive example','Interaktiv namuna')}">
@@ -193,7 +198,7 @@ function home(){
  ${foot()}</div>`;
 }
 function response(idx,good,explanation){return `<div class="response ${good?'':'warn'}" role="status"><strong>${good?(state.lang==='uz'?'Kuchliroq qaror':'Stronger next move'):(state.lang==='uz'?'Boshqa tomondan qarang':'Consider a different approach')}</strong><p>${e(explanation)}</p></div>`;}
-const cb=(label,index,selected,action,mode='choice')=>`<button class="${mode} ${selected?'selected':''}" data-action="${action}" data-value="${index}" aria-pressed="${selected?'true':'false'}">${mode==='choice'?`<span class="letter">${String.fromCharCode(65+index)}</span>`:''}<b>${e(label)}</b></button>`;
+const cb=(label,index,selected,action,mode='choice',letter=index)=>`<button class="${mode} ${selected?'selected':''}" data-action="${action}" data-value="${index}" aria-pressed="${selected?'true':'false'}">${mode==='choice'?`<span class="letter">${String.fromCharCode(65+letter)}</span>`:''}<b>${e(label)}</b></button>`;
 function labWidget(idx){
  const p=pick(idx);
  if(idx===0){let emotions=state.labChecks[0]||[];
@@ -244,7 +249,7 @@ function lockedPage(){return `<div class="view" style="max-width:900px">${kicker
 function testPage(){if(!canTest()&&!state.submitted)return lockedPage();if(state.submitted)return resultsPage();const n=state.quizIndex||0,q=EXAM[n];const ans=state.quizAnswers[n];return `<div class="view">
  <div class="exam-header"><div>${kicker('20 / '+t('test'))}<h2>${e(t('examTitle'))}</h2><p class="lede">${e(t('examDesc'))}</p></div><div style="min-width:135px;text-align:right"><div class="eyebrow">${e(t('answered'))}</div><span style="font:46px var(--serif)">${doneTest()}<small style="font:14px var(--mono)"> / 20</small></span></div></div>
  <div class="meterline" style="margin:20px 0"><div style="width:${doneTest()*5}%"></div></div><div class="exam-nav" aria-label="Question navigation">${EXAM.map((_,i)=>`<button data-action="question" data-value="${i}" class="${i===n?'current':''} ${state.quizAnswers[i]!==undefined?'answered':''}" aria-label="Question ${i+1}" ${i===n?'aria-current="step"':''}>${String(i+1).padStart(2,'0')}</button>`).join('')}</div>
- <div class="exam-card"><div class="micro-label">${e(t('question'))} ${String(n+1).padStart(2,'0')} ${e(t('of'))} 20 &nbsp; / &nbsp; ${E(CATS[q.cat])}</div><h3>${E(q.q)}</h3><div class="choice-grid">${q.o.map((x,i)=>cb(l(x),i,ans===i,'answer')).join('')}</div></div>
+ <div class="exam-card"><div class="micro-label">${e(t('question'))} ${String(n+1).padStart(2,'0')} ${e(t('of'))} 20 &nbsp; / &nbsp; ${E(CATS[q.cat])}</div><h3>${E(q.q)}</h3><div class="choice-grid">${state.choiceOrders[n].map((i,position)=>cb(l(q.o[i]),i,ans===i,'answer','choice',position)).join('')}</div></div>
  <div class="exam-actions"><button class="secondary" data-action="question" data-value="${Math.max(0,n-1)}" ${n===0?'disabled':''}>← ${e(t('examPrev'))}</button>${n<19?`<button class="primary" data-action="question" data-value="${n+1}">${e(t('examNext'))} ↗</button>`:`<button class="primary" data-action="submit" ${doneTest()!==20?'disabled':''}>${e(t('submit'))} ↗</button>`}</div><p class="smallnote" style="margin-top:16px">${e(doneTest()<20?t('testOverview'):t('examDesc'))}</p>${doneTest()===20&&n!==19?`<button class="primary" data-action="submit">${e(t('submit'))} ↗</button>`:''}${foot()}</div>`;}
 function resultStats(){const total=EXAM.filter((q,i)=>state.quizAnswers[i]===q.a).length,catScore=CATS.map((_,i)=>EXAM.filter((q,j)=>q.cat===i&&state.quizAnswers[j]===q.a).length);return {total,catScore};}
 function resultsPage(){if(!state.submitted)return testPage();const {total,catScore}=resultStats();return `<div class="view">${kicker(state.lang==='uz'?'SINOV / SIZNING NATIJANGIZ':'ASSESSMENT / YOUR RESULTS')}<div class="result-hero"><div><div class="micro-label" style="color:#f5a38a">${e(t('score'))}</div><h2>${e(t('resultsTitle'))}</h2><p style="font-size:15px;color:#c8d7cc;max-width:480px">${e(t('resultSubtitle'))}</p></div><div class="result-score">${total}<small>/ 20</small></div></div>
@@ -252,7 +257,41 @@ function resultsPage(){if(!state.submitted)return testPage();const {total,catSco
  <h2 style="font-size:46px;margin-top:45px">${e(t('review'))}</h2><p class="lede" style="font-size:16px">${state.lang==='uz'?'Xato — fikrlashni mashq qilish imkoniyati. Har bir vaziyat izohini ochib ko‘ring.':'A missed question is an opportunity to strengthen a habit. Open each item to review the reasoning.'}</p>
  <div class="review-list">${EXAM.map((q,i)=>{const good=state.quizAnswers[i]===q.a;return `<details class="review-item"><summary><span class="${good?'ok':'no'}">${good?'✓':'○'}</span><span style="flex:1">${String(i+1).padStart(2,'0')}. ${E(q.q)}</span><span class="caption">${good?e(t('resultReviewCorrect')):e(t('resultReviewWrong'))} &nbsp; ＋</span></summary><p><b>${state.lang==='uz'?'Sizning javobingiz:':'Your answer:'}</b> ${E(q.o[state.quizAnswers[i]])}</p><p><b>${state.lang==='uz'?'Tavsiya etilgan javob:':'Recommended response:'}</b> ${E(q.o[q.a])}</p><p>${E(q.why)}</p></details>`}).join('')}</div>
  <div class="alertbox">${e(t('resultSubtitle'))} ${state.lang==='uz'?'Bitta sinov yangi tahdidlarga doimiy tayyorlikni isbotlamaydi. Yaxshi odatlarni muntazam mashq qiling.':'One assessment cannot establish permanent readiness for future threats. Revisit the habits and practice again later.'}</div>
+ <div class="registration-callout">${total>=16?state.registered?(state.lang==='uz'?'Ro‘yxatdan o‘tdingiz.':'Registration complete.'):`<p>${state.lang==='uz'?'16/20 talab bajarildi. Endi maktabingizni ko‘rsatib ro‘yxatdan o‘ting.':'You met the 16/20 requirement. Register your school details now.'}</p><button class="primary" data-action="navigate" data-value="registration">${state.lang==='uz'?'Ro‘yxatdan o‘tish':'Register now'}</button>`:(state.lang==='uz'?'Ro‘yxatdan o‘tish uchun kamida 16/20 ball kerak. Qayta urinib ko‘ring.':'Registration requires at least 16/20. Review and try again.')}</div>
  <div class="cta-row hide-print"><button class="primary" data-action="navigate" data-value="guide">${e(t('resultAction'))} ↗</button><button class="secondary" data-action="print">${e(t('print'))}</button><button class="secondary" data-action="retake">${e(t('retake'))}</button></div>${foot()}</div>`;}
+function registrationPage(){
+ if(!state.submitted||resultStats().total<16)return resultsPage();
+ const uz=state.lang==='uz';
+ if(state.registered)return `<div class="view registration-view"><h2>${uz?'Ro‘yxatdan o‘tdingiz':'Registration complete'}</h2><p>${uz?'Ma’lumotlaringiz saqlandi.':'Your details were saved.'}</p><button class="secondary" data-action="navigate" data-value="results">${e(t('resultsTitle'))}</button></div>`;
+ return `<div class="view registration-view"><div class="section-kicker">${uz?'MAKTAB RO‘YXATI':'SCHOOL REGISTRATION'}</div><h2>${uz?'O‘zingiz haqingizda':'Your school details'}</h2><p class="lede">${resultStats().total}/20 · ${uz?'Ro‘yxatga ism, familiya, sinf, maktab va ball saqlanadi.':'Your name, class, school and score will be saved.'}</p><form id="registration-form" class="registration-form">
+ <label>${uz?'Viloyat':'Region'}<select name="regionId" required><option value="">${uz?'Viloyatni tanlang':'Choose region'}</option></select></label>
+ <label>${uz?'Tuman yoki shahar':'District or city'}<select name="districtId" required disabled><option value="">${uz?'Tumanni tanlang':'Choose district'}</option></select></label>
+ <label>${uz?'Maktab':'School'}<select name="schoolId" required disabled><option value="">${uz?'Maktabni tanlang':'Choose school'}</option></select></label>
+ <label>${uz?'Sinf':'Class'}<input name="className" maxlength="20" placeholder="9-A" required></label>
+ <label>${uz?'Ism':'First name'}<input name="firstName" maxlength="80" autocomplete="given-name" required></label>
+ <label>${uz?'Familiya':'Last name'}<input name="lastName" maxlength="80" autocomplete="family-name" required></label>
+ <div id="registration-status" role="status" aria-live="polite"></div><button class="primary" type="submit">${uz?'Ro‘yxatdan o‘tish':'Submit registration'}</button></form></div>`;
+}
+function fillSelect(select,items){const placeholder=select.options[0].textContent;select.innerHTML=`<option value="">${e(placeholder)}</option>`+items.map(item=>`<option value="${item.id}">${e(item.name)}</option>`).join('');select.disabled=items.length===0;}
+async function prepareRegistration(){
+ const form=S.querySelector('#registration-form');if(!form)return;
+ const status=form.querySelector('#registration-status');
+ try{
+  const directory=await loadDirectory();if(!form.isConnected)return;
+  const region=form.elements.namedItem('regionId'),district=form.elements.namedItem('districtId'),school=form.elements.namedItem('schoolId');
+  fillSelect(region,directory.regions);
+  region.addEventListener('change',()=>{fillSelect(district,directory.districts.filter(x=>x.regionId===Number(region.value)));fillSelect(school,[]);});
+  district.addEventListener('change',()=>fillSelect(school,directory.schools.filter(x=>x.districtId===Number(district.value))));
+  form.addEventListener('submit',async ev=>{
+   ev.preventDefault();if(!form.reportValidity())return;
+   const button=form.querySelector('button[type=submit]');button.disabled=true;status.textContent=state.lang==='uz'?'Saqlanmoqda…':'Saving…';
+   const values=Object.fromEntries(new FormData(form));
+   const body={...values,regionId:Number(values.regionId),districtId:Number(values.districtId),schoolId:Number(values.schoolId),answers:EXAM.map((_,i)=>state.quizAnswers[i])};
+   try{const response=await fetch('/api/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const result=await response.json();if(!response.ok)throw new Error(result.error||'Registration failed');state.registered=true;save();render();}
+   catch(error){status.textContent=error.message;button.disabled=false;}
+  });
+ }catch{status.textContent=state.lang==='uz'?'Maktablar ro‘yxati yuklanmadi. Sahifani qayta oching.':'School list unavailable. Please reload.';}
+}
 function guidePage(){
  const cards=[
  {h:B('01 / PAUSE','01 / TO‘XTANG'),body:B('Notice your emotional state. What is this message trying to make you feel? If it pushes an urgent sensitive action, slow down.','Hissiyotingizni payqang. Bu xabar qanday his uyg‘otmoqchi? Maxfiy harakatga shoshirsa, sekinlashing.')},
@@ -264,7 +303,7 @@ function guidePage(){
  {when:B('Before students begin','Boshlashdan oldin'),action:B('Explain: “This is a simulation, not a trap. You are not the weak link. Nobody should reveal passwords, real codes or private stories.”','“Bu tuzoq emas, simulyatsiya. Siz zaif emassiz. Hech kim haqiqiy parol, kod yoki shaxsiy voqeasini aytishi shart emas”, deb tushuntiring.')},
  {when:B('During the labs','Laboratoriyalarda'),action:B('Ask what emotion the scene activates before talking about the technology. Give students time to choose; discuss why a safe action works.','Texnologiyadan oldin vaziyat qanday hissiyot uyg‘otishini so‘rang. Tanlash uchun vaqt bering va xavfsiz qaror sababini muhokama qiling.')},
  {when:B('During practice','Amaliyotda'),action:B('Pair students to explain their choices. Encourage different hypotheses, but verify facts independently. Never publicly shame a wrong answer.','O‘quvchilar qarorini juftlikda tushuntirsin. Turli fikrga imkon bering, ammo faktni mustaqil tekshiring. Noto‘g‘ri javobni omma oldida uyat qilmang.')},
- {when:B('During the assessment','Yakuniy sinovda'),action:B('Give quiet, independent time. The 20 questions use fresh contexts and show explanations only after submission. Scores are local, not collected by a server.','20 ta yangi vaziyatga mustaqil javob berish uchun sokin vaqt ajrating. Izohlar topshirgandan keyin chiqadi. Natijalar serverga yuborilmaydi.')},
+ {when:B('During the assessment','Yakuniy sinovda'),action:B('Give quiet, independent time. The 20 questions use fresh contexts and show explanations only after submission. A qualifying score is saved only if the student submits registration.','20 ta yangi vaziyatga mustaqil javob berish uchun sokin vaqt ajrating. Izohlar topshirgandan keyin chiqadi. Yetarli ball faqat o‘quvchi ro‘yxatdan o‘tish formasini yuborsa saqlanadi.')},
  {when:B('After the session','Mashg‘ulotdan keyin'),action:B('Debrief one hard situation. Encourage a trusted reporting route at school, revisit habits later, and use results only to guide learning—not to label students.','Bitta murakkab vaziyatni muhokama qiling. Maktabda ishonchli xabar berish yo‘lini belgilang, odatlarni qayta mashq qiling; natijadan o‘quvchini yorliqlash uchun foydalanmang.')}
  ];
  return `<div class="view">${kicker(t('guide'))}<h2 style="max-width:870px">${e(t('guideTitle'))}</h2><p class="lede">${e(t('guideDesc'))}</p><div class="guide-grid">${cards.map(x=>`<div class="guide-card"><div class="micro-label">HABIT / ${E(x.h)}</div><h3>${E(x.h).split(' / ')[1]||E(x.h)}</h3><p>${E(x.body)}</p></div>`).join('')}</div>
@@ -277,7 +316,7 @@ function guidePage(){
 }
 function sourcesPage(){return `<div class="view">${kicker(t('sources'))}<h2 style="max-width:830px">${e(t('sourcesTitle'))}</h2><p class="lede">${e(t('sourcesDesc'))}</p><div class="alertbox">${state.lang==='uz'?'Eslatma: manbalar ilmiy va rasmiy yo‘riqnoma bo‘lsa ham, bu kursdagi vaziyatlar muallif tomonidan yaratilgan simulyatsiyalardir. Xavfsiz odatlarni mustahkamlash mumkin, ammo hech qanday 20 savollik sinov kelajakdagi barcha tahdidlarga tayyorlikni kafolatlamaydi.':'Method note: the scenarios are original teaching simulations informed by these sources, not real intercepted messages. Research suggests that practice can improve judgments, but evidence of transfer to every real-world future threat is limited. A 20-question score is an educational snapshot, not proof of immunity.'}</div>
  <div class="source-list">${SOURCES.map((x,i)=>`<a class="source-item" href="${e(x.url)}" rel="noopener noreferrer" target="_blank"><div><span>${String(i+1).padStart(2,'0')} &nbsp; ${e(x.name)} ↗</span><small>${E(x.desc)}</small></div><span class="caption">SOURCE ${String(i+1).padStart(2,'0')}</span></a>`).join('')}</div>
- <div class="divider"></div>${kicker('PRIVACY / OFFLINE')}<h3 style="margin-top:19px">${state.lang==='uz'?'Barchasi shu brauzerda qoladi.':'Nothing leaves this browser.'}</h3><p style="max-width:650px">${e(t('privacy'))} ${state.lang==='uz'?'Manba havolalari faqat siz ularni bossangiz internetda ochiladi.':'Only external source links will open on the internet if you choose to click them.'}</p><button class="secondary" data-action="reset">${e(t('restart'))}</button>${foot()}</div>`;}
+ <div class="divider"></div>${kicker('PRIVACY / REGISTRATION')}<h3 style="margin-top:19px">${state.lang==='uz'?'Ma’lumotlaringizni o‘zingiz yuborasiz.':'You choose when to submit your details.'}</h3><p style="max-width:650px">${e(t('privacy'))} ${state.lang==='uz'?'Manba havolalari faqat siz ularni bossangiz internetda ochiladi.':'External source links open only when you choose to click them.'}</p><button class="secondary" data-action="reset">${e(t('restart'))}</button>${foot()}</div>`;}
 function render(){
  document.documentElement.lang=state.lang;
  document.title=state.lang==='uz'?'SECOND THOUGHT — Kiberxavfsizlik madaniyati':'SECOND THOUGHT — Cybersecurity Culture Lab';
@@ -288,9 +327,11 @@ function render(){
  else if(view==='locked')S.innerHTML=lockedPage();
  else if(view==='test')S.innerHTML=testPage();
  else if(view==='results')S.innerHTML=resultsPage();
+ else if(view==='registration')S.innerHTML=registrationPage();
  else if(view==='guide')S.innerHTML=guidePage();
  else if(view==='sources')S.innerHTML=sourcesPage();
  else S.innerHTML=home();
+ if(view==='registration')prepareRegistration();
 }
 function playVoice(){
  if(!('speechSynthesis'in window)){alert(state.lang==='uz'?'Ushbu brauzerda ovozli o‘qish ishlamaydi. Matnni o‘qing.':'Speech playback is unavailable on this browser. Please read the transcript.');return;}
@@ -316,7 +357,7 @@ const handleClick = ev=>{
  if(a==='question'){state.quizIndex=Number(v);save();render();return;}
  if(a==='answer'){state.quizAnswers[state.quizIndex]=Number(v);save();render();return;}
  if(a==='submit'){if(doneTest()!==20)return;state.submitted=true;save();navigate('results');return;}
- if(a==='retake'){state.quizAnswers={};state.quizIndex=0;state.submitted=false;save();navigate('test');return;}
+ if(a==='retake'){state.quizAnswers={};state.quizIndex=0;state.submitted=false;state.choiceOrders=newChoiceOrders();save();navigate('test');return;}
  if(a==='print'){window.print();return;}
  if(a==='reset'){if(confirm(t('resetConfirm'))){const lang=state.lang;state=initial();state.lang=lang;save();navigate('home');}return;}
  if(a==='playVoice'){playVoice();return;}
