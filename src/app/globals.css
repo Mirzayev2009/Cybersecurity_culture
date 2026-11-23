@@ -59,3 +59,22 @@ body{background:var(--paper);font-size:15px;color:var(--ink)}h1,h2,h3{letter-spa
 .registration-form #registration-status,.registration-form button{grid-column:1/-1}
 .registration-form #registration-status:not(:empty){padding:12px;border-radius:8px;background:#fff1e7;color:#6f4936}
 @media(max-width:650px){.registration-form{grid-template-columns:1fr}}
+.student-feedback{margin:36px 0;padding:28px 0;border-block:1px solid var(--line);max-width:760px}
+.student-feedback h1,.student-feedback h2{font:750 clamp(24px,3vw,32px)/1.2 var(--sans);letter-spacing:-.025em;margin:0 0 12px;text-wrap:balance}
+.feedback-view .student-feedback{margin-top:0;padding-top:0;border-top:0}
+.student-feedback>p{color:var(--soft);font-size:14px;max-width:65ch;margin-bottom:20px}
+.student-feedback fieldset{border:0;padding:0;margin:0;min-width:0}
+.student-feedback legend{font-weight:650;font-size:14px;padding:0;margin-bottom:12px}
+.feedback-options{display:grid;gap:9px}
+.feedback-option{display:grid;grid-template-columns:20px minmax(0,1fr);align-items:start;gap:12px;padding:13px 15px;border:1px solid var(--line);border-radius:10px;background:var(--white);cursor:pointer;line-height:1.5}
+.feedback-option:hover{border-color:var(--ink)}
+.feedback-option:has(input:checked){background:var(--green);border-color:var(--greenink)}
+.feedback-option input{width:18px;height:18px;margin:3px 0 0;accent-color:var(--greenink)}
+.feedback-own{margin-top:18px}
+.feedback-own label{display:block;font-weight:650;margin-bottom:8px}
+.feedback-own textarea{display:block;width:100%;min-width:0;min-height:115px;resize:vertical;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--white);color:var(--ink);font:16px/1.5 var(--sans)}
+.feedback-own textarea:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.feedback-own .smallnote{margin:8px 0 0}
+.student-feedback fieldset:disabled{opacity:.65}
+#feedback-status{font-size:14px;color:var(--red2);margin:14px 0}
+#feedback-status:empty{margin:18px 0 0}

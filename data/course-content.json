@@ -1,0 +1,1022 @@
+{
+  "version": "2026-11-20-grades-5-11-v2",
+  "exam": [
+    {
+      "id": "final-01",
+      "cat": 0,
+      "q": {
+        "en": "A pop-up uses your name and an app logo. It says, “Upload your ID photo in 60 seconds or lose your account.” Which detail tries to rush you?",
+        "uz": "Oynada ismingiz va ilova logotipi bor. Unda: “60 soniya ichida hujjatingiz suratini yuklang, aks holda hisobingiz o‘chadi”, deyilgan. Qaysi belgi sizni shoshirishga urinmoqda?"
+      },
+      "o": [
+        {
+          "en": "The use of your name.",
+          "uz": "Ismingiz yozilgani."
+        },
+        {
+          "en": "The 60-second deadline.",
+          "uz": "60 soniyalik muddat."
+        },
+        {
+          "en": "The familiar app logo.",
+          "uz": "Tanish ilova logotipi."
+        },
+        {
+          "en": "The request for an ID photo.",
+          "uz": "Hujjat suratining so‘ralishi."
+        }
+      ],
+      "a": 1,
+      "why": {
+        "en": "The 60-second deadline creates time pressure. Your name and the logo make the message familiar; asking for an ID photo concerns personal information. Pause and check the real service without uploading the photo.",
+        "uz": "60 soniyalik muddat o‘ylash uchun vaqt kamdek his qildiradi. Ism va logotip tanishlikni ko‘rsatadi, hujjat surati esa shaxsiy ma’lumotdir. To‘xtang va surat yubormasdan haqiqiy xizmat orqali tekshiring."
+      }
+    },
+    {
+      "id": "final-02",
+      "cat": 0,
+      "q": {
+        "en": "An unknown sender writes, “Only our cleverest students get this special offer.” What feeling is this wording trying to create?",
+        "uz": "Notanish odam: “Bu maxsus taklif faqat eng aqlli o‘quvchilarimiz uchun”, deb yozdi. Bu gap qanday tuyg‘u uyg‘otishga urinmoqda?"
+      },
+      "o": [
+        {
+          "en": "Fear of losing an account.",
+          "uz": "Hisobni yo‘qotishdan qo‘rqish."
+        },
+        {
+          "en": "Guilt about refusing a friend.",
+          "uz": "Do‘stni rad etishdan aybdorlik."
+        },
+        {
+          "en": "Trust in a school rule.",
+          "uz": "Maktab qoidasiga ishonch."
+        },
+        {
+          "en": "A feeling of being special.",
+          "uz": "O‘zini alohida his qilish."
+        }
+      ],
+      "a": 3,
+      "why": {
+        "en": "The sender is using flattery to make you feel special. The message does not mention account loss, letting a friend down or an official rule. Feeling pleased is normal; it does not prove the offer is genuine.",
+        "uz": "Yuboruvchi sizni maqtayapti. Bu gapda hisobni o‘chirish tahdidi, do‘st oldidagi ayb yoki rasmiy qoida yo‘q. Xursand bo‘lish tabiiy, ammo bu taklifning rostligini isbotlamaydi."
+      }
+    },
+    {
+      "id": "final-03",
+      "cat": 0,
+      "q": {
+        "en": "An unknown account says, “If you cared about your friend, you would send money.” Which feeling does “if you cared” try to use?",
+        "uz": "Notanish akkaunt: “Do‘stingni o‘ylasang, pul yuborarding”, deb yozdi. “Do‘stingni o‘ylasang” degan gap qaysi tuyg‘udan foydalanmoqda?"
+      },
+      "o": [
+        {
+          "en": "Excitement about winning a prize.",
+          "uz": "Sovrin yutish hayajonidan."
+        },
+        {
+          "en": "Pride in being chosen for a team.",
+          "uz": "Jamoaga tanlanish faxridan."
+        },
+        {
+          "en": "Guilt about letting a friend down.",
+          "uz": "Do‘stni ranjitish aybidan."
+        },
+        {
+          "en": "Fear of losing access to an account.",
+          "uz": "Hisobni yo‘qotish qo‘rquvidan."
+        }
+      ],
+      "a": 2,
+      "why": {
+        "en": "The phrase tries to make refusing feel uncaring. It does not mention a prize, team selection or losing an account. Caring about your friend is a reason to verify who is asking.",
+        "uz": "Bu gap pul yubormasangiz, do‘stingizga befarqdek his qildirishga urinadi. Sovrin, jamoaga tanlanish yoki hisobni o‘chirish haqida gap yo‘q. Do‘stingizni o‘ylashingiz so‘rovni tekshirishga sababdir."
+      }
+    },
+    {
+      "id": "final-04",
+      "cat": 0,
+      "q": {
+        "en": "A message says you won a tablet and must pay a small fee to claim it. You already know the organizer’s official contact details. Which route should you use to check the prize?",
+        "uz": "Xabarda planshet yutganingiz, uni olish uchun kichik to‘lov kerakligi aytilgan. Tashkilotchining rasmiy aloqa ma’lumotlarini avvaldan bilasiz. Sovrinni qaysi yo‘l bilan tekshirasiz?"
+      },
+      "o": [
+        {
+          "en": "Use the organizer’s known contact details.",
+          "uz": "Tashkilotchining avvaldan ma’lum aloqa yo‘li orqali."
+        },
+        {
+          "en": "Ask the sender for a winner’s certificate.",
+          "uz": "Yuboruvchidan g‘oliblik hujjatini so‘rab."
+        },
+        {
+          "en": "Read testimonials on the payment page.",
+          "uz": "To‘lov sahifasidagi fikrlarni o‘qib."
+        },
+        {
+          "en": "Ask the sender to show previous winners.",
+          "uz": "Yuboruvchidan oldingi g‘oliblarni ko‘rsatishni so‘rab."
+        }
+      ],
+      "a": 0,
+      "why": {
+        "en": "Known contact details provide a separate check. The sender can manufacture certificates and winner stories, while the payment page controls its testimonials. Do not pay while checking.",
+        "uz": "Avvaldan ma’lum aloqa yo‘li xabardan alohida tekshiruvdir. Yuboruvchi hujjat va g‘oliblar haqidagi materialni soxtalashtirishi, sahifa esa o‘z fikrlarini o‘zi yozishi mumkin. Tekshirayotganda pul to‘lamang."
+      }
+    },
+    {
+      "id": "final-05",
+      "cat": 1,
+      "q": {
+        "en": "Three websites repeat a school announcement. All three cite the same unverified anonymous post and provide no other evidence. What have you found?",
+        "uz": "Uchta sayt bir maktab e’lonini takrorlamoqda. Uchalasi ham bitta tekshirilmagan anonim postga tayangan va boshqa dalil keltirmagan. Siz nimani topdingiz?"
+      },
+      "o": [
+        {
+          "en": "Three separate confirmations of the news.",
+          "uz": "Xabarning uchta alohida tasdig‘ini."
+        },
+        {
+          "en": "One unverified claim repeated three times.",
+          "uz": "Uch marta takrorlangan bitta tekshirilmagan xabarni."
+        },
+        {
+          "en": "An official announcement copied three times.",
+          "uz": "Uch marta ko‘chirilgan rasmiy e’lonni."
+        },
+        {
+          "en": "Three reports from separate eyewitnesses.",
+          "uz": "Uchta alohida guvohning xabarini."
+        }
+      ],
+      "a": 1,
+      "why": {
+        "en": "All three copies depend on one unverified source. Copies are not separate witnesses or confirmations, and official status has not been established. Repetition does not prove the claim true or false.",
+        "uz": "Barcha nusxalar bitta tekshirilmagan manbaga tayangan. Bu uchta mustaqil tasdiq yoki guvohlik emas, rasmiy e’lon ekani ham aniqlanmagan. Takrorlanish xabarni rost ham, yolg‘on ham deb isbotlamaydi."
+      }
+    },
+    {
+      "id": "final-06",
+      "cat": 1,
+      "q": {
+        "en": "A shared picture says the deadline for a school competition has changed. Which source should you check to verify this year’s deadline?",
+        "uz": "Ulashilgan rasmda maktab tanlovining oxirgi muddati o‘zgargani aytilgan. Bu yilgi muddatni tekshirish uchun qaysi manbani ko‘rasiz?"
+      },
+      "o": [
+        {
+          "en": "A cropped notice with no visible date.",
+          "uz": "Sanasi ko‘rinmaydigan kesilgan e’lonni."
+        },
+        {
+          "en": "Last year’s competition notice.",
+          "uz": "O‘tgan yilgi tanlov e’lonini."
+        },
+        {
+          "en": "This year’s official competition notice.",
+          "uz": "Bu yilgi tanlovning rasmiy e’lonini."
+        },
+        {
+          "en": "A group post repeating the same picture.",
+          "uz": "Xuddi shu rasmni takrorlagan guruh postini."
+        }
+      ],
+      "a": 2,
+      "why": {
+        "en": "This year’s official notice matches the competition and year. A cropped notice lacks context, last year’s notice is outdated, and another group post simply repeats the picture.",
+        "uz": "Bu yilgi rasmiy e’lon tegishli tanlov va yilga mos keladi. Sanasiz rasmda zarur ma’lumot yetishmaydi, o‘tgan yilgi e’lon eskirgan, guruh posti esa xabarni takrorlaydi."
+      }
+    },
+    {
+      "id": "final-07",
+      "cat": 1,
+      "q": {
+        "en": "A school report says, “10 of the 100 students surveyed shared a login code.” A blog headline says, “Almost every student shared a code.” Which statement matches the report?",
+        "uz": "Maktab hisobotida: “So‘ralgan 100 o‘quvchidan 10 nafari kirish kodini ulashgan”, deyilgan. Blog sarlavhasi: “Deyarli barcha o‘quvchilar kodini ulashgan”. Qaysi gap hisobotga mos?"
+      },
+      "o": [
+        {
+          "en": "Almost all 100 students shared a code.",
+          "uz": "So‘ralgan 100 o‘quvchining deyarli hammasi kod ulashgan."
+        },
+        {
+          "en": "Every student at the school shared a code.",
+          "uz": "Maktabdagi har bir o‘quvchi kod ulashgan."
+        },
+        {
+          "en": "No surveyed student shared a login code.",
+          "uz": "So‘ralgan o‘quvchilarning hech biri kod ulashmagan."
+        },
+        {
+          "en": "Ten surveyed students shared a login code.",
+          "uz": "So‘ralgan o‘quvchilarning o‘n nafari kod ulashgan."
+        }
+      ],
+      "a": 3,
+      "why": {
+        "en": "Ten of the surveyed students shared a code. That does not mean almost everyone, the whole school or nobody. Keep the original number and group when checking a headline.",
+        "uz": "Hisobotda so‘ralgan guruhdan aynan 10 kishi aytilgan. Bu deyarli hamma yoki butun maktab degani emas. “Hech kim” degan gap ham hisobotga zid."
+      }
+    },
+    {
+      "id": "final-08",
+      "cat": 1,
+      "q": {
+        "en": "A realistic video appears to show a teacher cancelling tomorrow’s lesson. You have only the video and do not know its original source. What does its realistic appearance establish?",
+        "uz": "Haqiqiyga o‘xshagan videoda o‘qituvchi ertangi dars bekorligini aytayotgandek. Sizda faqat video bor, dastlabki manbasi noma’lum. Videoning haqiqiyga o‘xshashi nimani tasdiqlaydi?"
+      },
+      "o": [
+        {
+          "en": "Appearance alone does not confirm the announcement.",
+          "uz": "Ko‘rinishning o‘zi e’lonni tasdiqlamaydi."
+        },
+        {
+          "en": "The announcement definitely came from the teacher.",
+          "uz": "E’lonni aynan o‘qituvchi berganini."
+        },
+        {
+          "en": "The video was definitely made using an AI tool.",
+          "uz": "Videoni albatta sun’iy intellekt yaratganini."
+        },
+        {
+          "en": "The school has already approved the announcement.",
+          "uz": "Maktab e’lonni allaqachon ma’qullaganini."
+        }
+      ],
+      "a": 0,
+      "why": {
+        "en": "Appearance alone does not establish the source or approval. It also does not prove that AI made the video. Check the announcement through an established school channel.",
+        "uz": "Ko‘rinish videoni kim yaratgani yoki e’lonni kim tasdiqlaganini isbotlamaydi. Uni albatta haqiqiy yoki sun’iy deb ham bo‘lmaydi. Xabarni maktabning avvaldan ma’lum aloqa yo‘li orqali tekshiring."
+      }
+    },
+    {
+      "id": "final-09",
+      "cat": 2,
+      "q": {
+        "en": "Someone sounding like your aunt calls from a new number asking for money. You already have her usual number saved. Which route should you use to check with her?",
+        "uz": "Xolangizga o‘xshash ovozli odam yangi raqamdan pul so‘rab qo‘ng‘iroq qildi. Xolangizning odatdagi raqami sizda saqlangan. U bilan qaysi yo‘l orqali tekshirasiz?"
+      },
+      "o": [
+        {
+          "en": "Call her previously saved number.",
+          "uz": "Avvaldan saqlangan raqamiga qo‘ng‘iroq qilib."
+        },
+        {
+          "en": "Call back the new number that rang.",
+          "uz": "Hozir qo‘ng‘iroq qilgan yangi raqamga qayta qo‘ng‘iroq qilib."
+        },
+        {
+          "en": "Send a message to the new number.",
+          "uz": "Yangi raqamga xabar yozib."
+        },
+        {
+          "en": "Ask the same caller to repeat the request.",
+          "uz": "O‘sha qo‘ng‘iroq qiluvchidan so‘rovni takrorlashni so‘rab."
+        }
+      ],
+      "a": 0,
+      "why": {
+        "en": "The saved number is an established route. Calling or messaging the new number, or asking the same caller again, returns to the unverified contact. A familiar voice alone does not prove identity.",
+        "uz": "Saqlangan raqam — avvaldan tanish aloqa yo‘li. Yangi raqamga qo‘ng‘iroq, xabar yoki o‘sha odamdan takror so‘rash tekshirilmagan aloqaga qaytishdir. Tanish ovozning o‘zi shaxsni isbotlamaydi."
+      }
+    },
+    {
+      "id": "final-10",
+      "cat": 2,
+      "q": {
+        "en": "An unexpected email says your streaming bill is overdue. You have the service’s genuine app installed. Where should you check your bill?",
+        "uz": "Kutilmagan email video xizmatiga to‘lovingiz kechikkanini aytmoqda. Qurilmangizda shu xizmatning haqiqiy ilovasi bor. To‘lovni qayerdan tekshirasiz?"
+      },
+      "o": [
+        {
+          "en": "The sign-in page linked in the email.",
+          "uz": "Emaildagi havola ochadigan kirish sahifasidan."
+        },
+        {
+          "en": "The contact number printed in the email.",
+          "uz": "Emailda yozilgan aloqa raqamidan."
+        },
+        {
+          "en": "The email’s attached payment document.",
+          "uz": "Emailga biriktirilgan to‘lov hujjatidan."
+        },
+        {
+          "en": "The genuine app already on your device.",
+          "uz": "Qurilmangizdagi haqiqiy ilovadan."
+        }
+      ],
+      "a": 3,
+      "why": {
+        "en": "The genuine app is independent of the email. The link, phone number and attachment all come from that unverified message. The bill could be real; check it separately.",
+        "uz": "Haqiqiy ilova xabardan alohida yo‘ldir. Qolgan uch variant emaildagi tekshirilmagan ma’lumotga tayanadi. To‘lov haqidagi xabar rost ham bo‘lishi mumkin; uni mustaqil tekshiring."
+      }
+    },
+    {
+      "id": "final-11",
+      "cat": 2,
+      "q": {
+        "en": "Your school group’s familiar admin account asks you to send a login code that arrived on your phone. Which response keeps the code private?",
+        "uz": "Maktab guruhidagi tanish administrator akkaunti telefoningizga kelgan kirish kodini yuborishingizni so‘radi. Qaysi javob kodni sir saqlaydi?"
+      },
+      "o": [
+        {
+          "en": "Send it after checking the profile photo.",
+          "uz": "Profil rasmini tekshirib, kodni yuborish."
+        },
+        {
+          "en": "Refuse to send the login code.",
+          "uz": "Kirish kodini yuborishni rad etish."
+        },
+        {
+          "en": "Send a screenshot instead of typing it.",
+          "uz": "Yozish o‘rniga kod skrinshotini yuborish."
+        },
+        {
+          "en": "Send it in a private chat with the admin.",
+          "uz": "Kodni administratorga shaxsiy chatda yuborish."
+        }
+      ],
+      "a": 1,
+      "why": {
+        "en": "A profile check, screenshot or private chat still reveals the code. A familiar account can be taken over. Keep the code private and contact the person another known way.",
+        "uz": "Rasmni tekshirish, skrinshot yoki shaxsiy chat kodni sir saqlamaydi: uchalasi ham uni oshkor qiladi. Tanish akkaunt ham boshqa odam qo‘liga o‘tishi mumkin. Odam bilan boshqa tanish aloqa yo‘li orqali tekshiring."
+      }
+    },
+    {
+      "id": "final-12",
+      "cat": 2,
+      "q": {
+        "en": "A poster’s QR code opens a ticket website. What does successfully scanning the code tell you?",
+        "uz": "Afishadagi QR kod chipta saytini ochdi. Kodning ochilgani nimani bildiradi?"
+      },
+      "o": [
+        {
+          "en": "The organizer has approved the website.",
+          "uz": "Tashkilotchi saytni ma’qullaganini."
+        },
+        {
+          "en": "The payment details will be handled safely.",
+          "uz": "To‘lov ma’lumotlari xavfsiz saqlanishini."
+        },
+        {
+          "en": "The code points to a web address.",
+          "uz": "Kod bir veb-manzilga olib borishini."
+        },
+        {
+          "en": "Someone has checked the poster for scams.",
+          "uz": "Kimdir afishani firibgarlikka tekshirganini."
+        }
+      ],
+      "a": 2,
+      "why": {
+        "en": "Scanning opens a destination. It does not prove organizer approval, safe payment handling or a scam check. Check the organizer’s known official ticket route before entering information.",
+        "uz": "QR kod sizni bir manzilga olib boradi. Ochilgani sayt ma’qullanganini, xavfsizligini yoki tekshirilganini isbotlamaydi. Ma’lumot kiritishdan oldin tashkilotchining tanish rasmiy chipta kanalini tekshiring."
+      }
+    },
+    {
+      "id": "final-13",
+      "cat": 3,
+      "q": {
+        "en": "Before a breach happens, which habit keeps a password stolen from one account from being the password for your other accounts?",
+        "uz": "Bir hisobning paroli o‘g‘irlansa, u boshqa hisoblaringizning ham paroli bo‘lib qolmasligi uchun oldindan qaysi odat kerak?"
+      },
+      "o": [
+        {
+          "en": "Use a different password for each account.",
+          "uz": "Har bir hisobga boshqa parol qo‘yish."
+        },
+        {
+          "en": "Use the same password, with a new last digit, on every account.",
+          "uz": "Oxirgi raqami yangilangan bitta umumiy parolni hamma hisobda ishlatish."
+        },
+        {
+          "en": "Change a shared password monthly on all accounts.",
+          "uz": "Bitta umumiy parolni har oy barcha hisoblarda almashtirish."
+        },
+        {
+          "en": "Store one shared password in a private note.",
+          "uz": "Bitta umumiy parolni shaxsiy qaydda saqlash."
+        }
+      ],
+      "a": 0,
+      "why": {
+        "en": "Different passwords keep one exposed password from being shared by your other accounts. Updating, storing or changing one shared password does not create separate passwords. A password manager can help store different strong passwords.",
+        "uz": "Har bir hisobning paroli boshqa bo‘lsa, bitta o‘g‘irlangan parol qolganlariga mos kelmaydi. Umumiy parolning oxirgi raqamini yangilash, har oy almashtirish yoki qaydga yozish uni alohida parollarga aylantirmaydi. Parol menejeri turli kuchli parollarni saqlashga yordam beradi."
+      }
+    },
+    {
+      "id": "final-14",
+      "cat": 3,
+      "q": {
+        "en": "Your email has a strong password. Its security settings offer two-step verification. What extra protection does turning it on add?",
+        "uz": "Emailingizda kuchli parol bor. Xavfsizlik sozlamalari ikki bosqichli tasdiqlashni taklif qilmoqda. Uni yoqish qanday qo‘shimcha himoya beradi?"
+      },
+      "o": [
+        {
+          "en": "It blocks every fake website you visit.",
+          "uz": "Ochilgan har bir soxta saytni to‘sadi."
+        },
+        {
+          "en": "It adds another check when signing in.",
+          "uz": "Hisobga kirishda yana bir tekshiruv qo‘shadi."
+        },
+        {
+          "en": "It removes the need for account passwords.",
+          "uz": "Hisob parollariga ehtiyojni yo‘q qiladi."
+        },
+        {
+          "en": "It installs the latest device updates.",
+          "uz": "Qurilmaning eng yangi yangilanishlarini o‘rnatadi."
+        }
+      ],
+      "a": 1,
+      "why": {
+        "en": "Two-step verification adds a sign-in check beyond the password. It does not block every fake site, remove the password in this setup or install updates. It adds protection without guaranteeing safety.",
+        "uz": "Ikki bosqichli tasdiqlash paroldan tashqari yana bir kirish tekshiruvini qo‘shadi. U barcha soxta saytlarni to‘smaydi, bu sozlama parolni bekor qilmaydi va qurilmani yangilamaydi. Qo‘shimcha himoya mutlaq kafolat emas."
+      }
+    },
+    {
+      "id": "final-15",
+      "cat": 3,
+      "q": {
+        "en": "A classmate unexpectedly sends an installation file and says it is the school’s new app. Your teacher has announced no app. Which check is strongest before installing it?",
+        "uz": "Sinfdoshingiz kutilmaganda o‘rnatish faylini yuborib, bu maktabning yangi ilovasi ekanini aytdi. Ustozingiz hech qanday ilova e’lon qilmagan. O‘rnatishdan oldin qaysi tekshiruv kuchliroq?"
+      },
+      "o": [
+        {
+          "en": "Check whether the icon uses the school logo.",
+          "uz": "Belgida maktab logotipi borligini tekshirish."
+        },
+        {
+          "en": "Ask the classmate whether the file seems safe.",
+          "uz": "Sinfdoshdan fayl xavfsizga o‘xshaydimi deb so‘rash."
+        },
+        {
+          "en": "Count how many classmates received the file.",
+          "uz": "Fayl nechta sinfdoshga kelganini sanash."
+        },
+        {
+          "en": "Ask your teacher through the usual school contact.",
+          "uz": "Ustozdan odatdagi maktab aloqa yo‘li orqali so‘rash."
+        }
+      ],
+      "a": 3,
+      "why": {
+        "en": "Your usual school contact can confirm whether the app is required. Logos can be copied; asking the sender repeats their claim; counting recipients measures distribution. Obtain any confirmed app from the school’s approved official source.",
+        "uz": "Tanish maktab aloqa yo‘li orqali ilova chindan kerakligini aniqlash mumkin. Logotipni ko‘chirish mumkin, yuboruvchidan so‘rash uning gapini takrorlaydi, ko‘p yuborilgani esa xavfsizlik dalili emas. Tasdiqlangan ilovani maktab ko‘rsatgan rasmiy manbadan oling."
+      }
+    },
+    {
+      "id": "final-16",
+      "cat": 3,
+      "q": {
+        "en": "Your award certificate shows your name, award, phone number and student ID. You want to share the award while hiding both contact and ID details. Which edit meets that goal?",
+        "uz": "Mukofot yorlig‘ingizda ism, mukofot nomi, telefon va o‘quvchi ID raqami bor. Mukofotni ulashib, telefon hamda ID raqamini yashirmoqchisiz. Qaysi tahrir maqsadga mos?"
+      },
+      "o": [
+        {
+          "en": "Cover the phone number but leave the ID visible.",
+          "uz": "Telefonni yopib, ID raqamini ochiq qoldirish."
+        },
+        {
+          "en": "Cover the ID number but leave the phone visible.",
+          "uz": "ID raqamini yopib, telefonni ochiq qoldirish."
+        },
+        {
+          "en": "Cover both the phone number and the ID number.",
+          "uz": "Telefonni ham, ID raqamini ham yopish."
+        },
+        {
+          "en": "Cover the award name but leave both numbers visible.",
+          "uz": "Mukofot nomini yopib, ikkala raqamni ochiq qoldirish."
+        }
+      ],
+      "a": 2,
+      "why": {
+        "en": "Cover both numbers. Hiding only one leaves the other visible; hiding the award does not hide either number. Use a solid cover or crop and check the exported image. Not every blur securely removes details.",
+        "uz": "Ikkala raqamni ham yopish kerak. Faqat bittasini yopish ikkinchisini ochiq qoldiradi; mukofot nomini yopish esa raqamlarni yashirmaydi. Butunlay yopish yoki kesishdan foydalaning va saqlangan rasmni tekshiring. Har qanday xiralashtirish ma’lumotni to‘liq yashirmaydi."
+      }
+    },
+    {
+      "id": "final-17",
+      "cat": 4,
+      "q": {
+        "en": "A suspicious page tells you to install a “cleaner.” You have not downloaded a file or entered any information. What should you do with that page now?",
+        "uz": "Shubhali sahifa “tozalovchi” ilova o‘rnatishni buyurmoqda. Siz fayl yuklamadingiz va hech qanday ma’lumot kiritmadingiz. Hozir bu sahifani nima qilasiz?"
+      },
+      "o": [
+        {
+          "en": "Follow its instructions to install the cleaner.",
+          "uz": "Ko‘rsatmasiga amal qilib, tozalovchini o‘rnatish."
+        },
+        {
+          "en": "Close the page without following its instructions.",
+          "uz": "Ko‘rsatmalariga amal qilmasdan sahifani yopish."
+        },
+        {
+          "en": "Enter a password to let the page check your account.",
+          "uz": "Hisobni tekshirsin deb parolni kiritish."
+        },
+        {
+          "en": "Send classmates the link so they can try the cleaner.",
+          "uz": "Sinfdoshlar sinab ko‘rsin deb havolani yuborish."
+        }
+      ],
+      "a": 1,
+      "why": {
+        "en": "Close the page. Installing software or entering a password adds risk; sharing spreads the link. Opening a page differs from submitting a password or installing software, but is not a guarantee of safety. Report the link and keep devices updated.",
+        "uz": "Sahifani yoping. Ilova o‘rnatish yoki parol kiritish xavfni oshiradi, havolani ulashish esa boshqalarga tarqatadi. Havolani ochish, parol kiritish va fayl o‘rnatish turli holatlar; faqat sahifa ochilgani mutlaq xavfsizlik kafolati ham emas. Shubhali havolani bildiring va qurilmani yangilab turing."
+      }
+    },
+    {
+      "id": "final-18",
+      "cat": 4,
+      "q": {
+        "en": "You entered your email password on a fake page, which is now closed. On your own trusted device, you can still open the genuine email app. Which action replaces the exposed password?",
+        "uz": "Email parolingizni soxta sahifaga kiritdingiz va uni yopdingiz. Ishonchli o‘z qurilmangizda haqiqiy email ilovasi hali ochiladi. Qaysi amal oshkor bo‘lgan parolni almashtiradi?"
+      },
+      "o": [
+        {
+          "en": "Change the password in the genuine app.",
+          "uz": "Haqiqiy ilovada parolni o‘zgartirish."
+        },
+        {
+          "en": "Delete the suspicious message from your inbox.",
+          "uz": "Shubhali xabarni kiruvchi xatlardan o‘chirish."
+        },
+        {
+          "en": "Clear the fake page from your browser history.",
+          "uz": "Soxta sahifani brauzer tarixidan tozalash."
+        },
+        {
+          "en": "Ask the fake page’s sender to delete your details.",
+          "uz": "Soxta sahifa yuboruvchisidan ma’lumotni o‘chirishni so‘rash."
+        }
+      ],
+      "a": 0,
+      "why": {
+        "en": "Change the password promptly in the genuine app. Deleting the message or history does not replace the exposed password; do not rely on the sender. Change reused copies too, close unfamiliar signed-in sessions and enable two-step verification. Ask a trusted adult for help if needed.",
+        "uz": "Haqiqiy ilovada parolni tezda almashtiring. Xabar yoki tarixni o‘chirish olingan parolni almashtirmaydi; firibgarning va’dasiga tayanmang. Shu parol boshqa hisobda bo‘lsa, u yerda ham almashtiring. Begona kirgan qurilmalarni uzing va ikki bosqichli tasdiqlashni yoqing. Zarur bo‘lsa ishonchli kattadan yordam so‘rang."
+      }
+    },
+    {
+      "id": "final-19",
+      "cat": 4,
+      "q": {
+        "en": "You and a trusted adult need to report money sent to a fake store. Which contact should you use to reach your bank safely?",
+        "uz": "Siz va ishonchli katta odam soxta do‘konga yuborilgan pul haqida bankingizga xabar bermoqchisiz. Bank bilan xavfsiz bog‘lanish uchun qaysi aloqadan foydalanasiz?"
+      },
+      "o": [
+        {
+          "en": "A new support number sent by the fake store.",
+          "uz": "Soxta do‘kon yuborgan yangi yordam raqamidan."
+        },
+        {
+          "en": "A stranger offering paid recovery in a message.",
+          "uz": "Xabarda pullik qaytarish taklif qilgan notanishdan."
+        },
+        {
+          "en": "A refund number posted in the store’s chat.",
+          "uz": "Do‘kon chatiga yozilgan pul qaytarish raqamidan."
+        },
+        {
+          "en": "The bank number shown in your genuine banking app.",
+          "uz": "Haqiqiy bank ilovasida ko‘rsatilgan bank raqamidan."
+        }
+      ],
+      "a": 3,
+      "why": {
+        "en": "The genuine banking app provides the bank’s own contact route. Store-supplied numbers and an unknown paid helper are not verified bank contacts. Contact the bank promptly, keep transaction details and ask what is possible. Recovery is not guaranteed.",
+        "uz": "Haqiqiy bank ilovasidagi aloqa bankning o‘z yo‘lidir. Do‘kon yuborgan raqamlar gumonli manbaga tayanadi, pullik yordamchi esa tekshirilmagan. Bankka tez murojaat qiling, to‘lov ma’lumotlarini saqlang va nima qilish mumkinligini so‘rang. Pul qaytishi kafolatlanmaydi."
+      }
+    },
+    {
+      "id": "final-20",
+      "cat": 4,
+      "q": {
+        "en": "Someone threatens to share a student’s private information and says, “Tell no one.” What should the student do about that demand for secrecy?",
+        "uz": "Kimdir o‘quvchining shaxsiy ma’lumotini tarqatish bilan tahdid qilib, “Hech kimga aytma”, dedi. O‘quvchi sir saqlash talabiga qanday javob berishi kerak?"
+      },
+      "o": [
+        {
+          "en": "Keep the threat secret and pay the sender.",
+          "uz": "Tahdidni sir saqlab, yuboruvchiga pul to‘lash."
+        },
+        {
+          "en": "Handle the threat alone to avoid embarrassment.",
+          "uz": "Uyalmaslik uchun tahdidni yolg‘iz hal qilish."
+        },
+        {
+          "en": "Tell a trusted adult and ask for help.",
+          "uz": "Ishonchli kattaga aytib, yordam so‘rash."
+        },
+        {
+          "en": "Ask an unknown online helper to negotiate.",
+          "uz": "Notanish internet yordamchisidan muzokara qilishni so‘rash."
+        }
+      ],
+      "a": 2,
+      "why": {
+        "en": "Tell a trusted adult. Secrecy and handling threats alone leave the student without support; an unknown helper is another unverified contact. The student is not to blame. Do not pay or forward private images. An adult can help keep threatening messages and report the account.",
+        "uz": "Ishonchli kattadan yordam so‘rang. Sir tutish va yolg‘iz hal qilish sizni yordamsiz qoldiradi, notanish yordamchi esa yana bir tekshirilmagan odamdir. Ayb sizda emas. Pul to‘lamang va shaxsiy rasmlarni tarqatmang. Katta odam tahdidli xabarlarni saqlash va shikoyat qilishga yordam beradi."
+      }
+    }
+  ],
+  "missions": [
+    {
+      "id": "practice-1",
+      "title": {
+        "en": "A friend with a new number",
+        "uz": "Do‘stingizning yangi raqami"
+      },
+      "tag": {
+        "en": "PRACTICE",
+        "uz": "MASHQ"
+      },
+      "scene": {
+        "en": "A new number says it is Aziz. The sender asks for 200,000 so‘m and says you must not call. You already have Aziz’s usual number.",
+        "uz": "Yangi raqamdagi odam o‘zini Aziz deb tanishtirib, 200 000 so‘m so‘radi. Qo‘ng‘iroq qilmaslikni aytdi. Azizning odatdagi raqami sizda saqlangan."
+      },
+      "question": {
+        "en": "Before sending money, which action checks who is asking?",
+        "uz": "Pul yuborishdan oldin kim so‘rayotganini qaysi amal tekshiradi?"
+      },
+      "choices": [
+        {
+          "en": "Ask the new number for a selfie.",
+          "uz": "Yangi raqamdan selfi so‘rash."
+        },
+        {
+          "en": "Call Aziz using your saved contact.",
+          "uz": "Azizning saqlangan raqamiga qo‘ng‘iroq qilish."
+        },
+        {
+          "en": "Compare the new account’s profile photo.",
+          "uz": "Yangi akkauntning profil rasmini solishtirish."
+        }
+      ],
+      "correct": 1,
+      "feedback": [
+        {
+          "en": "A photo can be copied or made. Call the number you already saved for Aziz.",
+          "uz": "Surat ko‘chirilgan yoki sun’iy yaratilgan bo‘lishi mumkin. Azizning avvaldan saqlangan raqamiga qo‘ng‘iroq qiling."
+        },
+        {
+          "en": "Yes. You are checking through a contact you trusted before this message arrived.",
+          "uz": "Ha. Xabar kelishidan oldin tanish bo‘lgan aloqa yo‘li orqali tekshiryapsiz."
+        },
+        {
+          "en": "A familiar profile photo does not show who controls the account. Use Aziz’s saved number.",
+          "uz": "Tanish profil rasmi akkauntni kim boshqarayotganini ko‘rsatmaydi. Azizning saqlangan raqamidan foydalaning."
+        }
+      ]
+    },
+    {
+      "id": "practice-2",
+      "title": {
+        "en": "A scholarship with a deadline",
+        "uz": "Grant uchun shoshilinch taklif"
+      },
+      "tag": {
+        "en": "PRACTICE",
+        "uz": "MASHQ"
+      },
+      "scene": {
+        "en": "A scholarship page asks for an ID photo and a fee within 12 minutes. You have the university’s official website saved from an earlier school lesson.",
+        "uz": "Grant sahifasi 12 daqiqa ichida hujjat surati va to‘lov so‘ramoqda. Oldingi darsdan universitetning rasmiy sayti sizda saqlangan."
+      },
+      "question": {
+        "en": "Where should you check whether the offer is real?",
+        "uz": "Taklifning rostligini qayerdan tekshirasiz?"
+      },
+      "choices": [
+        {
+          "en": "The saved university website.",
+          "uz": "Saqlangan universitet saytidan."
+        },
+        {
+          "en": "The offer page’s help chat.",
+          "uz": "Taklif sahifasining yordam chatidan."
+        },
+        {
+          "en": "The offer page’s trust rating.",
+          "uz": "Taklif sahifasidagi ishonchlilik bahosidan."
+        }
+      ],
+      "correct": 0,
+      "feedback": [
+        {
+          "en": "Yes. Open the known university website yourself and compare the scholarship details. Ask a teacher if you cannot confirm them.",
+          "uz": "Ha. Tanish universitet saytini o‘zingiz ochib, grant ma’lumotlarini solishtiring. Tasdiqlay olmasangiz, ustozdan yordam so‘rang."
+        },
+        {
+          "en": "The same people can control both the offer and its chat. Check through the known university website.",
+          "uz": "Taklifni ham, chatni ham bir odam boshqarishi mumkin. Tanish universitet sayti orqali tekshiring."
+        },
+        {
+          "en": "A page can give itself a trust rating. That is not an independent check.",
+          "uz": "Sahifa o‘ziga o‘zi ishonchlilik bahosi qo‘yishi mumkin. Bu mustaqil tekshiruv emas."
+        }
+      ]
+    },
+    {
+      "id": "practice-3",
+      "title": {
+        "en": "A school timetable app",
+        "uz": "Maktab jadvali ilovasi"
+      },
+      "tag": {
+        "en": "PRACTICE",
+        "uz": "MASHQ"
+      },
+      "scene": {
+        "en": "A familiar group admin sends NEW_EXAM_SCHEDULE.apk, an app installation file. The message says you need to install it to see tomorrow’s exam room.",
+        "uz": "Tanish guruh administratori NEW_EXAM_SCHEDULE.apk nomli ilova o‘rnatish faylini yubordi. Xabarda ertangi imtihon xonasini ko‘rish uchun uni o‘rnatish kerakligi aytilgan."
+      },
+      "question": {
+        "en": "How should you check the timetable?",
+        "uz": "Jadvalni qanday tekshirasiz?"
+      },
+      "choices": [
+        {
+          "en": "Install the file and check its name.",
+          "uz": "Faylni o‘rnatib, nomini tekshirish."
+        },
+        {
+          "en": "Ask classmates to install it first.",
+          "uz": "Avval sinfdoshlardan o‘rnatib ko‘rishni so‘rash."
+        },
+        {
+          "en": "Ask your teacher through the usual school channel.",
+          "uz": "Ustozdan odatdagi maktab aloqa yo‘li orqali so‘rash."
+        }
+      ],
+      "correct": 2,
+      "feedback": [
+        {
+          "en": "Installing first exposes the device before you have checked the file. Ask your teacher through the usual school channel.",
+          "uz": "Avval o‘rnatish tekshirilmagan faylga qurilmaga kirish imkonini beradi. Ustozdan tanish maktab aloqa yo‘li orqali so‘rang."
+        },
+        {
+          "en": "A classmate should not have to test a suspicious app. Check with the school without installing or forwarding it.",
+          "uz": "Sinfdosh shubhali ilovani sinab ko‘rishi shart emas. O‘rnatmasdan va uzatmasdan maktab bilan tekshiring."
+        },
+        {
+          "en": "Yes. Confirm the timetable through your established school contact. A familiar admin account could be misused.",
+          "uz": "Ha. Jadvalni tanish maktab aloqa yo‘li orqali tasdiqlang. Tanish administrator akkauntidan ham boshqa odam foydalanishi mumkin."
+        }
+      ]
+    },
+    {
+      "id": "practice-4",
+      "title": {
+        "en": "A video about cancelled classes",
+        "uz": "Dars bekorligi haqidagi video"
+      },
+      "tag": {
+        "en": "PRACTICE",
+        "uz": "MASHQ"
+      },
+      "scene": {
+        "en": "A video appears to show your principal cancelling tomorrow’s classes. Many people have shared it, but your school has not announced a change.",
+        "uz": "Videoda direktoringiz ertangi darslarni bekor qilayotgandek ko‘rinadi. Uni ko‘p odam ulashgan, ammo maktab hech qanday o‘zgarish e’lon qilmagan."
+      },
+      "question": {
+        "en": "What would confirm whether classes are cancelled?",
+        "uz": "Dars bekorligini nima tasdiqlaydi?"
+      },
+      "choices": [
+        {
+          "en": "More shares of the same video.",
+          "uz": "Xuddi shu videoning yana ko‘p ulashilishi."
+        },
+        {
+          "en": "Confirmation from your usual school contact.",
+          "uz": "Maktabning odatdagi aloqa yo‘lidan tasdiq."
+        },
+        {
+          "en": "A clear picture of the principal.",
+          "uz": "Direktorning tiniq tasviri."
+        }
+      ],
+      "correct": 1,
+      "feedback": [
+        {
+          "en": "Many shares can repeat one unverified source. Check with your usual school contact.",
+          "uz": "Ko‘p ulashish bitta tekshirilmagan manbani takrorlashi mumkin. Maktabning tanish aloqa yo‘lidan tekshiring."
+        },
+        {
+          "en": "Yes. Ask the school through its established channel. The video alone does not confirm the announcement.",
+          "uz": "Ha. Maktabdan odatdagi kanal orqali so‘rang. Videoning o‘zi e’lonni tasdiqlamaydi."
+        },
+        {
+          "en": "A clear picture can still be misleading. You do not have to decide whether AI made it; check the announcement separately.",
+          "uz": "Tiniq tasvir ham chalg‘itishi mumkin. Videoni sun’iy intellekt yaratganini topish shart emas; e’lonni alohida tekshiring."
+        }
+      ]
+    },
+    {
+      "id": "practice-5",
+      "title": {
+        "en": "Free game currency",
+        "uz": "O‘yindagi bepul valyuta"
+      },
+      "tag": {
+        "en": "PRACTICE",
+        "uz": "MASHQ"
+      },
+      "scene": {
+        "en": "An account claiming to be game support offers free game currency. It asks for a screenshot of the sign-in code sent to your phone.",
+        "uz": "O‘zini o‘yin yordam xodimi deb tanishtirgan akkaunt bepul o‘yin valyutasini taklif qildi. Telefoningizga kelgan kirish kodi skrinshotini so‘ramoqda."
+      },
+      "question": {
+        "en": "What should you do with the code?",
+        "uz": "Kodni nima qilasiz?"
+      },
+      "choices": [
+        {
+          "en": "Send it after checking the profile photo.",
+          "uz": "Profil rasmini tekshirib, kodni yuborish."
+        },
+        {
+          "en": "Share a screenshot with your phone number hidden.",
+          "uz": "Telefon raqamini yopib, skrinshotni yuborish."
+        },
+        {
+          "en": "Keep the code private.",
+          "uz": "Kodni sir saqlash."
+        }
+      ],
+      "correct": 2,
+      "feedback": [
+        {
+          "en": "A profile picture does not prove the sender works for the game. Keep sign-in codes private.",
+          "uz": "Profil rasmi odam o‘yinda ishlashini isbotlamaydi. Kirish kodini sir saqlang."
+        },
+        {
+          "en": "Hiding your phone number still leaves the sign-in code visible. The code itself is the secret.",
+          "uz": "Telefonni yashirsangiz ham, kirish kodi ko‘rinib turadi. Sir saqlanishi kerak bo‘lgan narsa — kodning o‘zi."
+        },
+        {
+          "en": "Yes. A short-lived code can still let someone enter your account. Use the game’s official help route if you need support.",
+          "uz": "Ha. Qisqa muddatli kod ham hisobga kirish imkonini berishi mumkin. Yordam kerak bo‘lsa, o‘yinning rasmiy kanalidan foydalaning."
+        }
+      ]
+    },
+    {
+      "id": "practice-6",
+      "title": {
+        "en": "A threatening message",
+        "uz": "Tahdidli xabar"
+      },
+      "tag": {
+        "en": "PRACTICE",
+        "uz": "MASHQ"
+      },
+      "scene": {
+        "en": "An unknown account threatens to post private information about you unless you pay. It tells you to keep the message secret.",
+        "uz": "Notanish akkaunt pul bermasangiz shaxsiy ma’lumotingizni tarqatish bilan tahdid qilmoqda. Xabarni sir saqlashingizni aytdi."
+      },
+      "question": {
+        "en": "Which response gets you trusted help?",
+        "uz": "Qaysi javob ishonchli yordamga olib keladi?"
+      },
+      "choices": [
+        {
+          "en": "Ask the account to promise it will stop.",
+          "uz": "Akkauntdan to‘xtashga va’da berishini so‘rash."
+        },
+        {
+          "en": "Tell a trusted adult now.",
+          "uz": "Hozir ishonchli kattaga aytish."
+        },
+        {
+          "en": "Send a small payment to gain time.",
+          "uz": "Vaqt yutish uchun ozroq pul yuborish."
+        }
+      ],
+      "correct": 1,
+      "feedback": [
+        {
+          "en": "The account controls its own promises. You deserve help from a trusted adult.",
+          "uz": "Akkaunt o‘z va’dasini o‘zi boshqaradi. Siz ishonchli kattadan yordam olishga haqlisiz."
+        },
+        {
+          "en": "Yes. You do not have to handle threats alone. A trusted adult can help you report the account and keep relevant messages. Do not forward private images or pay the sender.",
+          "uz": "Ha. Tahdidga yolg‘iz qarshi turishingiz shart emas. Katta odam akkaunt ustidan shikoyat qilish va tegishli xabarlarni saqlashga yordam beradi. Shaxsiy rasmlarni tarqatmang va yuboruvchiga pul to‘lamang."
+        },
+        {
+          "en": "A payment does not guarantee the threat will stop. Tell a trusted adult rather than managing this alone.",
+          "uz": "To‘lov tahdid to‘xtashini kafolatlamaydi. Yolg‘iz hal qilish o‘rniga ishonchli kattaga ayting."
+        }
+      ]
+    }
+  ],
+  "labDecisions": [
+    {
+      "q": {
+        "en": "The message asks for your sign-in code. Which action checks with the real school without sharing the code?",
+        "uz": "Xabar kirish kodingizni so‘ramoqda. Qaysi amal kodni bermasdan haqiqiy maktab bilan tekshiradi?"
+      },
+      "o": [
+        {
+          "en": "Send the sign-in code.",
+          "uz": "Kirish kodini yuborish."
+        },
+        {
+          "en": "Call the school’s saved number.",
+          "uz": "Maktabning saqlangan raqamiga qo‘ng‘iroq qilish."
+        },
+        {
+          "en": "Ask the sender to prove it works for the school.",
+          "uz": "Yuboruvchidan maktabda ishlashini isbotlashni so‘rash."
+        }
+      ],
+      "a": 1,
+      "feedback": [
+        {
+          "en": "Sharing the code could let someone into your account.",
+          "uz": "Kodni yuborish boshqa odamga hisobingizga kirish imkonini berishi mumkin."
+        },
+        {
+          "en": "You used a contact known before this message.",
+          "uz": "Bu xabardan oldin tanish bo‘lgan aloqa yo‘lidan foydalandingiz."
+        },
+        {
+          "en": "The sender controls its own claims; contact the school separately.",
+          "uz": "Yuboruvchi o‘z gapini o‘zi tasdiqlaydi. Maktab bilan alohida bog‘laning."
+        }
+      ]
+    },
+    {
+      "q": {
+        "en": "Where should you check this scholarship offer?",
+        "uz": "Bu grant taklifini qayerdan tekshirasiz?"
+      },
+      "o": [
+        {
+          "en": "The offer page’s help chat.",
+          "uz": "Taklif sahifasining yordam chatidan."
+        },
+        {
+          "en": "The university website you already know.",
+          "uz": "Avvaldan tanish universitet saytidan."
+        },
+        {
+          "en": "The offer page’s own reviews.",
+          "uz": "Taklif sahifasining o‘zidagi fikrlardan."
+        }
+      ],
+      "a": 1,
+      "feedback": [
+        {
+          "en": "The offer and chat can have the same operator.",
+          "uz": "Taklif va chatni bir odam boshqarishi mumkin."
+        },
+        {
+          "en": "You checked a separate known source.",
+          "uz": "Alohida tanish manbadan tekshirdingiz."
+        },
+        {
+          "en": "Reviews on the offer page are not an independent check.",
+          "uz": "Taklif sahifasidagi fikrlar mustaqil tekshiruv emas."
+        }
+      ]
+    },
+    {
+      "q": {
+        "en": "Which route checks who is asking?",
+        "uz": "Qaysi aloqa yo‘li kim so‘rayotganini tekshiradi?"
+      },
+      "o": [
+        {
+          "en": "Trust the familiar voice.",
+          "uz": "Tanish ovozga ishonish."
+        },
+        {
+          "en": "Call your sister’s saved number.",
+          "uz": "Opangizning saqlangan raqamiga qo‘ng‘iroq qilish."
+        },
+        {
+          "en": "Ask the new number for another voice note.",
+          "uz": "Yangi raqamdan yana bir ovozli xabar so‘rash."
+        }
+      ],
+      "a": 1,
+      "feedback": [
+        {
+          "en": "A familiar voice alone does not prove identity.",
+          "uz": "Tanish ovozning o‘zi shaxsni isbotlamaydi."
+        },
+        {
+          "en": "You used a separate contact you already knew.",
+          "uz": "Avvaldan tanish bo‘lgan alohida aloqadan foydalandingiz."
+        },
+        {
+          "en": "Another recording from the same contact does not confirm who it is.",
+          "uz": "O‘sha aloqadan yana bir yozuv kelishi kimligini tasdiqlamaydi."
+        }
+      ]
+    }
+  ]
+}

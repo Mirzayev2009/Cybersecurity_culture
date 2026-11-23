@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "SECOND THOUGHT — Kiberxavfsizlik madaniyati",
   description:
-    "SECOND THOUGHT — an offline, interactive cybersecurity culture experience for students. Understand, experience and prove safer judgment online.",
+    "SECOND THOUGHT — an interactive online-safety course for students in grades 5–11. Practice checking messages, protecting accounts and asking for help.",
 };
 
 export const viewport: Viewport = {

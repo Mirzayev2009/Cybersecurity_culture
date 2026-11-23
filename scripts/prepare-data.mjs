@@ -1,11 +1,7 @@
 import fs from 'node:fs';
-import vm from 'node:vm';
-
-const source = fs.readFileSync('src/lib/cyberculture.js', 'utf8');
-const declarations = source.slice(source.indexOf('const B='), source.indexOf('const STORAGE='));
-const context = {};
-vm.runInNewContext(`${declarations}\nglobalThis.answerKey=EXAM.map(x=>x.a)`, context);
-fs.writeFileSync('data/answer-key.json', JSON.stringify(context.answerKey));
+const content = JSON.parse(fs.readFileSync('data/course-content.json','utf8'));
+const answerKey = content.exam.map(q=>q.a);
+fs.writeFileSync('data/answer-key.json', JSON.stringify(answerKey)+'\n');
 
 const raw = JSON.parse(fs.readFileSync('data/uzbekistan-schools-source.json', 'utf8'));
 const regionNames = [...new Set(raw.map((x) => x.viloyat.trim()))].sort();
@@ -54,6 +50,7 @@ revoke all on public.regions, public.districts, public.schools, public.registrat
 -- Server-only secret key writes registrations; no browser read policy.
 
 `;
+sql += fs.readFileSync('supabase-feedback.sql','utf8') + '\n\n';
 for (const [table, items, fields] of [
   ['regions', regions, ['id', 'name']],
   ['districts', districts, ['id', 'region_id', 'name']],
@@ -67,4 +64,4 @@ for (const [table, items, fields] of [
   }
 }
 fs.writeFileSync('supabase-setup.sql', sql);
-console.log({ regions: regions.length, districts: districts.length, schools: schools.length, questions: context.answerKey.length });
+console.log({ regions: regions.length, districts: districts.length, schools: schools.length, questions: answerKey.length });

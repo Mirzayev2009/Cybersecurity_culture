@@ -1,7 +1,10 @@
 import directory from "../../../../data/uzbekistan-schools.json";
 import answerKey from "../../../../data/answer-key.json";
+import courseContent from "../../../../data/course-content.json";
+import { PASS_SCORE, validAnswers, scoreAnswers } from "@/lib/assessment.mjs";
 
 type Submission = {
+  contentVersion: string;
   regionId: number;
   districtId: number;
   schoolId: number;
@@ -21,6 +24,9 @@ export async function POST(request: Request) {
   if (!data || typeof data !== "object" || Array.isArray(data)) {
     return Response.json({ error: "Invalid request." }, { status: 400 });
   }
+  if (data.contentVersion !== courseContent.version) {
+    return Response.json({ error: "The questions have changed. Reload and complete the updated test.", code: "CONTENT_VERSION_MISMATCH" }, { status: 409 });
+  }
 
   const region = directory.regions.find((item) => item.id === data.regionId);
   const district = directory.districts.find(
@@ -34,9 +40,7 @@ export async function POST(request: Request) {
   const className = typeof data.className === "string" ? data.className.trim() : "";
   if (
     !school ||
-    !Array.isArray(data.answers) ||
-    data.answers.length !== 20 ||
-    data.answers.some((answer) => !Number.isInteger(answer) || answer < 0 || answer > 3) ||
+    !validAnswers(data.answers) ||
     !firstName || firstName.length > 80 ||
     !lastName || lastName.length > 80 ||
     !className || className.length > 20
@@ -44,8 +48,8 @@ export async function POST(request: Request) {
     return Response.json({ error: "Check the registration details and try again." }, { status: 400 });
   }
 
-  const score = data.answers.filter((answer, index) => answer === answerKey[index]).length;
-  if (score < 16) {
+  const score = scoreAnswers(data.answers, answerKey);
+  if (score < PASS_SCORE) {
     return Response.json({ error: "Registration requires at least 16 correct answers out of 20." }, { status: 403 });
   }
 

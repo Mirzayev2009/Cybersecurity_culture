@@ -4,9 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "next build --webpack",
+    "build": "node scripts/prepare-answer-key.mjs --check && next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prepare:answers": "node scripts/prepare-answer-key.mjs",
+    "check:answers": "node scripts/prepare-answer-key.mjs --check",
+    "test": "node --test tests/*.test.mjs",
+    "test:production": "node scripts/smoke-check.mjs"
   },
   "dependencies": {
     "next": "16.4.6",
