@@ -146,7 +146,7 @@ const finished=()=>({...completed(),submitted:true,quizAnswers:Object.fromEntrie
 test('feedback offers three opinions and a custom response for every score',()=>{
   const app=harness(finished());app.click('navigate','results');
   assert.equal((app.html().match(/name="feedbackChoice"/g)||[]).length,4);
-  assert.match(app.html(),/Answering is optional and does not affect your score/);
+  assert.match(app.html(),/Feedback is required before registration/);
   assert.ok(!app.html().includes('<textarea'));
   app.changeFeedback('own_words');assert.match(app.html(),/<textarea/);
   app.typeFeedback('I liked the practice. </textarea><script>bad</script>');
@@ -156,6 +156,62 @@ test('feedback offers three opinions and a custom response for every score',()=>
   assert.equal(app.state().feedbackChoice,'own_words');
   const reloaded=harness(undefined,app.storage);reloaded.click('navigate','results');
   assert.equal(reloaded.state().feedbackText,app.state().feedbackText);
+});
+
+const passed=()=>({...completed(),submitted:true,quizAnswers:Object.fromEntries(content.exam.map((q,i)=>[i,q.a]))});
+
+test('registration requires a saved opinion, including non-positive and write-in answers',async()=>{
+  for(const choice of feedback.FEEDBACK_CHOICES){
+    let calls=0;
+    const app=harness(passed(),undefined,{fetch:async()=>{calls++;return Response.json({ok:true});}});
+    app.click('navigate','registration');
+    assert.match(app.html(),/Step 1 of 2/);
+    assert.match(app.html(),/Before registering, choose one answer/);
+    assert.ok(!app.html().includes('id="registration-form"'));
+    await app.submitFeedback();assert.equal(calls,0);
+    app.changeFeedback(choice);
+    if(choice==='own_words'){
+      await app.submitFeedback();assert.equal(calls,0);
+      app.typeFeedback('I still need help with the examples.');
+    }
+    // Choosing an answer alone cannot skip the save step.
+    app.click('navigate','results');app.click('navigate','registration');
+    assert.ok(!app.html().includes('id="registration-form"'));
+    await app.submitFeedback();assert.equal(calls,1);
+    assert.match(app.html(),/Step 2 of 2/);
+    assert.match(app.html(),/id="registration-form"/);
+    const reload=harness(undefined,app.storage);reload.click('navigate','registration');
+    assert.match(reload.html(),/id="registration-form"/);
+  }
+});
+
+test('registration stays locked during feedback saving and a failed retry keeps the draft',async()=>{
+  let resolveSave;
+  let calls=0;
+  const app=harness(passed(),undefined,{fetch:async()=>{
+    calls++;
+    if(calls===1)return new Promise(resolve=>{resolveSave=resolve;});
+    return Response.json({ok:true});
+  }});
+  app.click('navigate','registration');app.changeFeedback('own_words');app.typeFeedback('More practice please.');
+  const pending=app.submitFeedback();
+  assert.match(app.html(),/Sending/);
+  assert.ok(!app.html().includes('id="registration-form"'));
+  resolveSave(Response.json({error:'unavailable'},{status:503}));await pending;
+  assert.equal(app.state().feedbackSubmitted,false);
+  assert.match(app.html(),/More practice please/);
+  assert.ok(!app.html().includes('id="registration-form"'));
+  await app.submitFeedback();assert.match(app.html(),/id="registration-form"/);
+});
+
+test('finishing feedback after navigating away does not redirect the student',async()=>{
+  let resolveSave;
+  const app=harness(passed(),undefined,{fetch:()=>new Promise(resolve=>{resolveSave=resolve;})});
+  app.click('navigate','registration');app.changeFeedback('no_change');
+  const pending=app.submitFeedback();app.click('navigate','guide');
+  resolveSave(Response.json({ok:true}));await pending;
+  assert.ok(!app.html().includes('id="registration-form"'));
+  app.click('navigate','registration');assert.match(app.html(),/id="registration-form"/);
 });
 
 test('feedback requires a custom response and never sends a hidden draft',async()=>{

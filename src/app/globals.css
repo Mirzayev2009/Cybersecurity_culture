@@ -78,3 +78,106 @@ body{background:var(--paper);font-size:15px;color:var(--ink)}h1,h2,h3{letter-spa
 .student-feedback fieldset:disabled{opacity:.65}
 #feedback-status{font-size:14px;color:var(--red2);margin:14px 0}
 #feedback-status:empty{margin:18px 0 0}
+
+/* Readable type and controls across phone, tablet and desktop widths. */
+body{font-size:16px}
+button,input,select,textarea{font-family:var(--sans)}
+button,input,select,textarea,a,summary{touch-action:manipulation}
+input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+h1,h2,h3{letter-spacing:-.03em;overflow-wrap:anywhere;text-wrap:balance}
+h2{font-size:clamp(1.75rem,1.15rem + 2vw,3.25rem);line-height:1.14}
+.view{min-width:0}
+.view p{overflow-wrap:anywhere}
+.primary,.secondary,.textbtn{min-height:44px;white-space:normal;line-height:1.4}
+.primary,.secondary{font-size:1rem}
+.navitem{min-height:44px}
+.nav-text{font-size:.875rem;line-height:1.4}
+.topcrumb{flex:1;min-width:0}
+.topright{flex-shrink:0}
+.mobilemenu{flex-shrink:0;width:44px;height:44px}
+.lang-switch button{min-width:44px;min-height:36px;font-size:.8125rem}
+.lesson-intro h2{font-size:clamp(1.875rem,1.2rem + 2.4vw,3.25rem);letter-spacing:-.035em;line-height:1.14}
+.teaching p,.scene p,.guide-card p,.student-feedback>p{font-size:1rem;line-height:1.65}
+.principle p,.response p,.review-item p,.alertbox{font-size:.9375rem;line-height:1.65}
+.choice,.chip,.evidence,.protection{min-height:44px;font-size:1rem;line-height:1.5;overflow-wrap:anywhere}
+.mission-card h3{font-size:clamp(1.75rem,1.25rem + 1.5vw,2.5rem);letter-spacing:-.03em;line-height:1.2}
+.exam-card h3{font-size:clamp(1.375rem,1rem + 1.5vw,2rem);letter-spacing:-.02em;line-height:1.4;text-wrap:pretty}
+.exam-nav{grid-template-columns:repeat(10,minmax(0,1fr))}
+.exam-nav button{min-height:44px;font-size:.875rem}
+.exam-actions{flex-wrap:wrap;align-items:stretch}
+.exam-actions button{flex:1 1 190px}
+.student-feedback legend{font-size:1rem}
+.feedback-option{font-size:1rem;min-height:48px}
+.feedback-option span{min-width:0;overflow-wrap:anywhere}
+.feedback-own .smallnote,.smallnote{font-size:.875rem;line-height:1.6}
+.registration-step{font-weight:650;font-size:.9375rem;color:var(--soft);margin:0 0 20px}
+.registration-view{max-width:960px}
+.registration-view .student-feedback{margin-bottom:24px;padding-bottom:24px}
+.registration-view .student-feedback .primary{margin-top:8px}
+.registration-form label{font-size:1rem}
+.result-hero{grid-template-columns:minmax(0,1fr) auto;gap:24px;padding:clamp(20px,3vw,40px)}
+.result-summary{min-width:0}
+.result-summary .micro-label{color:#f5a38a}
+.result-note{font-size:1rem;color:#c8d7cc;max-width:48ch;margin-bottom:0;line-height:1.6}
+.result-score{font-size:clamp(4rem,7vw,7rem);letter-spacing:-.04em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.result-bars{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+.result-bar b{font:650 .875rem/1.4 var(--sans)}
+.review-title{margin-top:40px}
+.review-item summary>span{min-width:0;overflow-wrap:anywhere}
+.source-item{min-width:0}
+.source-item span{min-width:0;overflow-wrap:anywhere}
+.footer{font-size:.75rem;line-height:1.6}
+
+@media(max-width:960px){
+ .exam-nav{grid-template-columns:repeat(5,minmax(0,1fr))}
+ .result-bars{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:780px){
+ .rail,.rail.collapsed{height:100dvh;max-width:calc(100vw - 32px)}
+ .top{height:auto;min-height:68px;padding:10px 12px;gap:8px}
+ .topcrumb{max-width:none;font-size:.8125rem}
+ .lang-switch button{min-height:40px}
+ .view{padding:24px clamp(16px,4vw,28px) 48px}
+ .landing .welcome-left{padding:24px 20px}
+ .landing .welcome h1{font-size:clamp(2rem,1.4rem + 3vw,3rem);line-height:1.12}
+ .registration-goal p,.landing .reassurance,.landing .path-desc,.hero-aside{font-size:.9375rem;line-height:1.6}
+ .registration-goal{padding:20px}
+ .demo-message,.demo-choice{font-size:1rem}
+ .demo-choice{min-height:48px}
+ .simulation-body,.mission-card,.exam-card{padding:20px;min-width:0}
+ .scene{padding:16px}
+ .exam-card{min-height:0}
+ .exam-card h3{margin:16px 0 22px}
+ .mission-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible}
+ .mission-list button{min-width:0;padding:12px}
+ .mission-list b{font-size:.9375rem;line-height:1.4}
+ .lab-footer{flex-wrap:wrap}
+ .lab-footer button{flex:1 1 180px}
+ .result-hero{gap:12px 16px}
+ .result-summary{display:contents}
+ .result-summary .micro-label{grid-column:1/-1;margin:0}
+ .result-summary h2{grid-column:1;grid-row:2;font-size:clamp(1.625rem,1rem + 3vw,2.5rem);margin:0}
+ .result-score{grid-column:2;grid-row:2;font-size:clamp(3.25rem,9vw,4.5rem)}
+ .result-score small{font-size:.8125rem}
+ .result-note{grid-column:1/-1;grid-row:3;font-size:.9375rem}
+ .registration-callout{margin:20px 0;padding:20px}
+ .registration-callout .primary{width:100%}
+ .student-feedback{margin:28px 0;padding:24px 0}
+ .student-feedback h1,.student-feedback h2{font-size:clamp(1.5rem,1.1rem + 2vw,2rem);line-height:1.25}
+ .feedback-option{padding:14px 12px;gap:10px}
+ .registration-view .primary,.registration-view>.secondary{width:100%}
+ .registration-form{margin-top:24px}
+ .review-item{padding:16px}
+ .review-item summary{display:grid;grid-template-columns:20px minmax(0,1fr);gap:8px}
+ .review-item summary .caption{grid-column:2;font-size:.8125rem}
+ .teaching-row{grid-template-columns:1fr;gap:6px}
+ .guide-card{padding:20px}
+}
+@media(max-width:360px){
+ .result-hero{gap:12px;padding:18px}
+ .result-summary h2{font-size:1.5rem}
+ .result-score{font-size:3rem}
+ .result-bars,.protect-grid,.mission-list{grid-template-columns:1fr}
+ .demo-content{padding:18px 14px}
+ .landing .demo-card{padding:16px}
+}
